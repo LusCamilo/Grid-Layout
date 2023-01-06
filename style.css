@@ -6,13 +6,20 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
+h2{
+
+    padding-top: 50px;
+    padding-bottom: 20px;
+    
+}
+
 body{
 
     padding-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(89, 0, 141);
+    background-color: #59008d;
 
 }
 .item{
@@ -44,8 +51,35 @@ body{
     grid-template-columns: 200px 200px;
 
 }
+.grid-template-columns-2{
+
+    grid-template-columns: 3fr 1fr 2fr;
+
+}
 .grid-template-columns-3{
 
-    grid-template-columns: 1fr 3fr 1fr;
+    /* 
+
+    palavras são respeitadas quando estão apenas com "fr" 
+    grid-template-columns: 5fr 5fr 3fr; 
+
+    */
+
+    /* porém com minmax não */
+
+    grid-template-columns: minmax(200px, 5fr) 5fr 3fr;
+
+}
+.grid-template-columns-4{
+
+    /* auto-fit: diz que deve-se criar o maximo de colunas possiveis  dentro do container */
+
+    grid-template-columns: repeat(3, 100px);
+
+}
+
+.grid-template-columns-5{
+
+    grid-template-columns: repeat(auto-fit, minmax(70px, auto));
 
 }
